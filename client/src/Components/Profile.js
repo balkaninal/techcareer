@@ -17,7 +17,10 @@ const Profile = () => {
 
     useEffect(
         () => {
-            dispatch(getProfile(userId))
+            if (userId =! 'visitor'){
+                dispatch(getProfile(userId))
+            }
+            
 
 
         }, [dispatch, userId]
