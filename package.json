@@ -4,21 +4,27 @@
   "description": "HealthcareApp_balkaninal",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server",
+    "start": "node server/server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "npm start --prefix frontend",
-    "server": "nodemon backend/server",
-    "dev": "concurrently \"npm run server\" \"npm run client\" "
+    "client": "npm start --prefix client",
+    "server": "nodemon server/server",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "balkan inal",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.1"
+    "moment": "^2.29.1",
+    "mongoose": "^6.1.1",
+    "socket.io": "^4.4.0"
   },
   "devDependencies": {
     "concurrently": "^6.4.0",
