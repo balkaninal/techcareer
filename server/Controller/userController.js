@@ -163,8 +163,6 @@ const addUser = asyncHandler(async (req, res) => {
         donorFor: [],
         waitingFor: [],
         messageRooms: [],
-
-        //age: moment().diff(req.body.dateOfBirth, 'years').toString()
     })
 
     try {
